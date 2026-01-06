@@ -1,48 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Feed - Full Project</title>
+    <title>Instagram Feed - Proyecto Final</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-   </head>
+    
+    
+</head>
 <body class="bg-light">
 
-    <nav class="navbar navbar-light bg-white border-bottom sticky-top">
-        <div class="container-fluid d-flex justify-content-between px-4">
+    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top">
+        <div class="container-fluid px-4">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <i class="fa-brands fa-instagram me-2"></i> 
                 <strong>Instagram</strong>
             </a>
-            <div class="d-flex align-items-center">
-                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#createPostModal">
-                    Crear un nuevo Post
-                </button>
-                
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        <i class="fa-solid fa-gear"></i>
-                    </button> 
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Perfil</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item text-danger" href="#">Salir</a></li>
-                    </ul>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <div class="d-flex flex-column flex-md-row align-items-center mt-3 mt-md-0">
+                    <button class="btn btn-custom-post me-md-2 mb-2 mb-md-0" data-bs-toggle="modal" data-bs-target="#createPostModal">
+                        Crear un nuevo Post
+                    </button>
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-gear"></i>
+                        </button> 
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Perfil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">Salir</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid py-2 bg-white border-bottom mt-3">
+    <div class="container-fluid py-2 bg-white border-bottom">
         <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
             <li class="nav-item">
-                <button class="nav-link bg-transparent border-0 text-dark" id="pills-grid-tab" data-bs-toggle="pill" data-bs-target="#pills-grid" type="button">
+                <button class="nav-link border-0" id="pills-grid-tab" data-bs-toggle="pill" data-bs-target="#pills-grid" type="button">
                     <i class="fa-solid fa-th"></i>
                 </button>
             </li>
             <li class="nav-item">
-                <button class="nav-link active bg-transparent border-0 text-primary" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button">
+                <button class="nav-link active border-0" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button">
                     <i class="fa-solid fa-square"></i>
                 </button>
             </li>
@@ -50,41 +59,20 @@
     </div>
 
     <div class="tab-content" id="pills-tabContent">
+        
         <div class="tab-pane fade" id="pills-grid" role="tabpanel">
-            <div class="container mt-4 text-center">
-               <div class="container mt-4">
-    <div class="row row-cols-3 g-1"> 
-        <div class="col">
-            <img src="https://st1.uvnimg.com/9f/d7/ea3914774b76a6ef2f65eaabe8e9/gettyimages-941520068.jpg" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Cristiano">
-        </div>
-        <div class="col">
-            <img src="https://images.unsplash.com/20/frozen-grass.JPG?q=80&w=1170&auto=format&fit=crop" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Frozen Grass">
-        </div>
-        <div class="col">
-            <img src="https://www.tudn.com/_next/image?url=https%3A%2F%2Fst1.uvnimg.com%2Fdims4%2Fdefault%2F17d6bf7%2F2147483647%2Fthumbnail%2F2048x1152%2Fquality%2F75%2F%3Furl%3Dhttp%253A%252F%252Fuvn-brightspot.s3.amazonaws.com%252F1d%252Ff7%252F83bc40a54b5484b52047096d8546%252Fhelmut-marko-sergio-perez.jpg&w=1280&q=75" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Checo Perez">
-        </div>
-
-        <div class="col">
-            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/plantilla-para-un-post-de-medio-ambiente-design-template-2a36598639a3e9ecd58c24790dae77f8_screen.jpg?ts=1577013366" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Ambiente">
-        </div>
-        <div class="col">
-            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/copesa/R24NM6H2UZF4PHKSHMYU226YFU.jpg" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Copesa">
-        </div>
-        <div class="col">
-            <img src="https://picsum.photos/id/10/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Random 1">
-        </div>
-
-        <div class="col">
-            <img src="https://picsum.photos/id/20/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Random 2">
-        </div>
-        <div class="col">
-            <img src="https://picsum.photos/id/30/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Random 3">
-        </div>
-        <div class="col">
-            <img src="https://picsum.photos/id/40/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Random 4">
-        </div>
-    </div>
-</div>
+            <div class="container mt-4">
+                <div class="row row-cols-1 row-cols-md-3 g-1"> 
+                    <div class="col">
+                        <img src="https://picsum.photos/id/10/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Imagen 1">
+                    </div>
+                    <div class="col">
+                        <img src="https://picsum.photos/id/20/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Imagen 2">
+                    </div>
+                    <div class="col">
+                        <img src="https://picsum.photos/id/30/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Imagen 3">
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -92,73 +80,17 @@
             <div class="container mt-4">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6">
-                        
                         <div class="bg-white border mb-4">
                             <header class="d-flex justify-content-between align-items-center p-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="fs-2 me-2"><i class="fab fa-bootstrap"></i></div>
-                                    <div class="d-flex flex-column">
-                                        <span class="fw-bold lh-1">Bootstrap</span>
-                                        <small class="text-secondary">Frank Padilla</small>
-                                    </div>
-                                </div>
+                                <span class="fw-bold">Frank Padilla</span>
                                 <i class="fas fa-ellipsis-v text-secondary"></i>
                             </header>
-                            <img src="https://picsum.photos/id/1/600/400" class="img-fluid w-100" alt="Post 1">
+                            <img src="https://picsum.photos/id/1/600/400" class="img-fluid w-100" alt="Post">
                             <footer class="p-3">
-                                <div class="d-flex justify-content-between mb-2 fs-4">
-                                    <div><i class="far fa-heart me-3"></i><i class="far fa-comment me-3"></i><i class="far fa-paper-plane"></i></div>
-                                    <i class="far fa-bookmark"></i>
-                                </div>
                                 <p class="fw-bold mb-1">204 Likes</p>
-                                <p class="mb-0"><strong>Bootstrap</strong> Este es el primer post del feed 🚀</p>
+                                <p class="mb-0">¡Mi primer post corregido! 🚀</p>
                             </footer>
                         </div>
-
-                        <div class="bg-white border mb-4">
-                            <header class="d-flex justify-content-between align-items-center p-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="fs-2 me-2 text-primary"><i class="fas fa-futbol"></i></div>
-                                    <div class="d-flex flex-column">
-                                        <span class="fw-bold lh-1">SportsCenter</span>
-                                        <small class="text-secondary">Cristiano Ronaldo</small>
-                                    </div>
-                                </div>
-                                <i class="fas fa-ellipsis-v text-secondary"></i>
-                            </header>
-                            <img src="https://www.tudn.com/_next/image?url=https%3A%2F%2Fst1.uvnimg.com%2F9f%2Fd7%2Fea3914774b76a6ef2f65eaabe8e9%2Fgettyimages-941520068.jpg&w=640&q=75" class="img-fluid w-100" alt="Post 2">
-                            <footer class="p-3">
-                                <div class="d-flex justify-content-between mb-2 fs-4">
-                                    <div><i class="far fa-heart me-3"></i><i class="far fa-comment me-3"></i><i class="far fa-paper-plane"></i></div>
-                                    <i class="far fa-bookmark"></i>
-                                </div>
-                                <p class="fw-bold mb-1">26,985 Likes</p>
-                                <p class="mb-0"><strong>Amazing GOAL by Cristiano!</strong> El mejor de la historia ⚽</p>
-                            </footer>
-                        </div>
-
-                        <div class="bg-white border mb-4">
-                            <header class="d-flex justify-content-between align-items-center p-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="fs-2 me-2 text-success"><i class="fas fa-umbrella-beach"></i></div>
-                                    <div class="d-flex flex-column">
-                                        <span class="fw-bold lh-1">TravelGram</span>
-                                        <small class="text-secondary">The Beach</small>
-                                    </div>
-                                </div>
-                                <i class="fas fa-ellipsis-v text-secondary"></i>
-                            </header>
-                            <img src="https://picsum.photos/id/15/600/400" class="img-fluid w-100" alt="Post 3">
-                            <footer class="p-3">
-                                <div class="d-flex justify-content-between mb-2 fs-4">
-                                    <div><i class="far fa-heart me-3"></i><i class="far fa-comment me-3"></i><i class="far fa-paper-plane"></i></div>
-                                    <i class="far fa-bookmark"></i>
-                                </div>
-                                <p class="fw-bold mb-1">1,500 Likes</p>
-                                <p class="mb-0"><strong>TravelGram</strong> ¡Ojalá estuviera allí ahora mismo! 🌊</p>
-                            </footer>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -170,22 +102,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Crea tu nuevo Post</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="fw-bold mb-1">Describe lo que gusta:</label>
-                        <textarea class="form-control mb-2" rows="3" placeholder="Agrega tu observación de lo que gusta"></textarea>
-                        
-                        <div class="border rounded p-1 d-inline-block bg-light">
-                            <button type="button" class="btn btn-light btn-sm border-0"><i class="fa-solid fa-camera"></i></button>
-                            <button type="button" class="btn btn-light btn-sm border-0"><i class="fa-solid fa-location-dot"></i></button>
-                        </div>
-                    </div>
+                    <textarea class="form-control" rows="3" placeholder="¿Qué estás pensando?"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success">Publicar</button>
+                    <button type="button" class="btn btn-custom-publish">Publicar</button>
                 </div>
             </div>
         </div>

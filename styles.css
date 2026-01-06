@@ -1,25 +1,48 @@
-.nav-pills .nav-link.active, 
-.nav-pills .show > .nav-link {
-    background-color: transparent !important; /* Fondo transparente */
-    box-shadow: none !important;             /* Quita el brillo al hacer clic */
-}
 
+        /* 1. Corrección de colores para botones y estados activos */
+        
+        /* Botón "Crear nuevo post" con !important para asegurar el cambio */
+        .btn-custom-post {
+            background-color: #198754 !important; /* Verde */
+            color: white !important;
+            border: none;
+        }
 
-.nav-link i {
-    color: #6c757d; 
-    font-size: 1.3rem; /* Ajusta un poco el tamaño si lo ves pequeño */
-}
+        /* Botón "Publicar" en el modal */
+        .btn-custom-publish {
+            background-color: #0d6efd !important; /* Azul o el color que prefieras */
+            color: white !important;
+            border: none;
+        }
 
-/* 3. Color NEGRO para la cuadrícula cuando esté activa */
-#pills-grid-tab.active i {
-    color: black !important;
-}
+        /* Estilos para las pestañas de navegación */
+        .nav-pills .nav-link.active {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
 
-/* 4. Color AZUL para la lista cuando esté activa */
-#pills-list-tab.active i {
-    color: #0d6efd !important;
-}
+        /* Iconos de las pestañas */
+        .nav-link i {
+            color: #6c757d; 
+            font-size: 1.3rem;
+        }
 
-html {
+        /* Color cuando la cuadrícula está activa */
+        #pills-grid-tab.active i {
+            color: black !important;
+        }
+
+        /* Color cuando la lista está activa */
+        #pills-list-tab.active i {
+            color: #0d6efd !important;
+        }
+
+        /* Ajuste de imágenes */
+        .object-fit-cover {
+            object-fit: cover;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
+  
