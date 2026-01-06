@@ -1,115 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Feed - Proyecto Final</title>
+    <title>Instagram - Frank Padilla</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top">
-        <div class="container-fluid px-4">
+    <nav class="navbar navbar-light bg-white border-bottom sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <i class="fa-brands fa-instagram me-2"></i> 
-                <strong>Instagram</strong>
+                <i class="fa-brands fa-instagram me-2 fs-3"></i>
+                <span class="fw-bold fs-4">Instagram</span>
             </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-                <div class="d-flex flex-column flex-md-row align-items-center mt-3 mt-md-0">
-                    <button class="btn btn-custom-post me-md-2 mb-2 mb-md-0" data-bs-toggle="modal" data-bs-target="#createPostModal">
-                        Crear un nuevo Post
+            <div class="d-flex align-items-center">
+                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#createPostModal">Nuevo Post</button>
+                <div class="dropdown">
+                    <button class="btn btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-gear"></i>
                     </button>
-                    
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            <i class="fa-solid fa-gear"></i>
-                        </button> 
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Perfil</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-danger" href="#">Salir</a></li>
-                        </ul>
-                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Accesibilidad</a></li>
+                        <li><a class="dropdown-item" href="#">Privacidad</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#">Salir</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid py-2 bg-white border-bottom">
-        <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
-            <li class="nav-item">
-                <button class="nav-link border-0" id="pills-grid-tab" data-bs-toggle="pill" data-bs-target="#pills-grid" type="button">
-                    <i class="fa-solid fa-th"></i>
-                </button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link active border-0" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button">
-                    <i class="fa-solid fa-square"></i>
-                </button>
-            </li>
-        </ul>
-    </div>
-
-    <div class="tab-content" id="pills-tabContent">
-        
-        <div class="tab-pane fade" id="pills-grid" role="tabpanel">
-            <div class="container mt-4">
-                <div class="row row-cols-1 row-cols-md-3 g-1"> 
-                    <div class="col">
-                        <img src="https://picsum.photos/id/10/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Imagen 1">
-                    </div>
-                    <div class="col">
-                        <img src="https://picsum.photos/id/20/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Imagen 2">
-                    </div>
-                    <div class="col">
-                        <img src="https://picsum.photos/id/30/600/600" class="img-fluid w-100 object-fit-cover" style="aspect-ratio: 1/1;" alt="Imagen 3">
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="tab-pane fade show active" id="pills-list" role="tabpanel">
-            <div class="container mt-4">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8 col-lg-6">
-                        <div class="bg-white border mb-4">
-                            <header class="d-flex justify-content-between align-items-center p-3">
-                                <span class="fw-bold">Frank Padilla</span>
-                                <i class="fas fa-ellipsis-v text-secondary"></i>
-                            </header>
-                            <img src="https://picsum.photos/id/1/600/400" class="img-fluid w-100" alt="Post">
-                            <footer class="p-3">
-                                <p class="fw-bold mb-1">204 Likes</p>
-                                <p class="mb-0">¡Mi primer post corregido! 🚀</p>
-                            </footer>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade" id="createPostModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Crea tu nuevo Post</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title">Crear nueva publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <textarea class="form-control" rows="3" placeholder="¿Qué estás pensando?"></textarea>
+                    <form id="createPostForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Descripción:</label>
+                            <textarea class="form-control" rows="3" placeholder="Añade la descripción de tu post aquí..."></textarea>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-light border btn-sm"><i class="fa-solid fa-camera"></i></button>
+                            <button type="button" class="btn btn-light border btn-sm"><i class="fa-solid fa-location-dot"></i></button>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-custom-publish">Publicar</button>
+                    <button type="submit" form="createPostForm" class="btn btn-success">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-white border-bottom shadow-sm">
+        <ul class="nav nav-pills justify-content-center py-2" id="pills-tab" role="tablist">
+            <li class="nav-item"><button class="nav-link active" id="pills-grid-tab" data-bs-toggle="pill" data-bs-target="#pills-grid" type="button"><i class="fa-solid fa-th fs-5"></i></button></li>
+            <li class="nav-item"><button class="nav-link" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button"><i class="fa-solid fa-square fs-5"></i></button></li>
+        </ul>
+    </div>
+
+    <div class="tab-content mt-3" id="pills-tabContent">
+        
+        <div class="tab-pane fade show active" id="pills-grid" role="tabpanel">
+            <div class="container p-0" style="max-width: 935px;">
+                <div class="row g-1">
+                    <div class="col-4"><img src="https://picsum.photos/id/10/600/600" class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/20/600/600" class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/30/600/600" class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/40/600/600" class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/50/600/600" class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/60/600/600" class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/70/600/600" class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/80/600/600" class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-4"><img src="https://picsum.photos/id/90/600/600" class="img-fluid img-grid" alt="Post"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-list" role="tabpanel">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        
+                        <div class="post-container bg-white border mb-5">
+                            <header class="p-3 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <div class="me-2 fs-3 text-danger"><i class="fab fa-html5"></i></div>
+                                    <div class="lh-1"><div class="fw-bold">HTML5</div><small class="text-secondary">Frank Padilla</small></div>
+                                </div>
+                                <i class="fas fa-ellipsis-v text-secondary"></i>
+                            </header>
+                            <img src="https://picsum.photos/id/237/800/600" class="w-100" alt="Perro">
+                            <div class="p-3">
+                                <div class="d-flex justify-content-between mb-2 fs-4">
+                                    <div><i class="far fa-heart me-2"></i><i class="far fa-comment me-2"></i><i class="far fa-paper-plane"></i></div>
+                                    <i class="far fa-bookmark"></i>
+                                </div>
+                                <div class="fw-bold mb-1">204 Me gusta</div>
+                                <div><strong>Frank</strong> ¡Un día increíble con mi mejor amigo!</div>
+                            </div>
+                        </div>
+
+                        <div class="post-container bg-white border mb-5">
+                            <header class="p-3 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <div class="me-2 fs-3 text-danger"><i class="fab fa-html5"></i></div>
+                                    <div class="lh-1"><div class="fw-bold">HTML5</div><small class="text-secondary">Frank Padilla</small></div>
+                                </div>
+                                <i class="fas fa-ellipsis-v text-secondary"></i>
+                            </header>
+                            <img src="https://picsum.photos/id/10/800/600" class="w-100" alt="Paisaje">
+                            <div class="p-3">
+                                <div class="d-flex justify-content-between mb-2 fs-4">
+                                    <div><i class="far fa-heart me-2"></i><i class="far fa-comment me-2"></i><i class="far fa-paper-plane"></i></div>
+                                    <i class="far fa-bookmark"></i>
+                                </div>
+                                <div class="fw-bold mb-1">512 Me gusta</div>
+                                <div><strong>Frank</strong> Disfrutando de la paz en la naturaleza.</div>
+                            </div>
+                        </div>
+
+                        <div class="post-container bg-white border mb-5">
+                            <header class="p-3 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <div class="me-2 fs-3 text-danger"><i class="fab fa-html5"></i></div>
+                                    <div class="lh-1"><div class="fw-bold">HTML5</div><small class="text-secondary">Frank Padilla</small></div>
+                                </div>
+                                <i class="fas fa-ellipsis-v text-secondary"></i>
+                            </header>
+                            <img src="https://picsum.photos/id/43/800/600" class="w-100" alt="Ciudad">
+                            <div class="p-3">
+                                <div class="d-flex justify-content-between mb-2 fs-4">
+                                    <div><i class="far fa-heart me-2"></i><i class="far fa-comment me-2"></i><i class="far fa-paper-plane"></i></div>
+                                    <i class="far fa-bookmark"></i>
+                                </div>
+                                <div class="fw-bold mb-1">389 Me gusta</div>
+                                <div><strong>Frank</strong> Luces y sombras en la arquitectura urbana.</div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

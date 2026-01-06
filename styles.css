@@ -1,48 +1,98 @@
+/* 1. Ajustes Generales */
+body {
+    background-color: #fafafa; /* Gris muy claro típico de Instagram */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-        /* 1. Corrección de colores para botones y estados activos */
-        
-        /* Botón "Crear nuevo post" con !important para asegurar el cambio */
-        .btn-custom-post {
-            background-color: #198754 !important; /* Verde */
-            color: white !important;
-            border: none;
-        }
+/* 2. Navbar y Navegación */
+.navbar {
+    height: 60px;
+}
 
-        /* Botón "Publicar" en el modal */
-        .btn-custom-publish {
-            background-color: #0d6efd !important; /* Azul o el color que prefieras */
-            color: white !important;
-            border: none;
-        }
+/* Estilo para los botones de vista (Grid vs List) */
+.nav-pills .nav-link.btn-view {
+    color: #8e8e8e; /* Color gris para icono inactivo */
+    background-color: transparent !important;
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
 
-        /* Estilos para las pestañas de navegación */
-        .nav-pills .nav-link.active {
-            background-color: transparent !important;
-            box-shadow: none !important;
-        }
+/* Color azul solo para el icono seleccionado */
+.nav-pills .nav-link.btn-view.active {
+    color: #0095f6 !important; /* Azul característico */
+}
 
-        /* Iconos de las pestañas */
-        .nav-link i {
-            color: #6c757d; 
-            font-size: 1.3rem;
-        }
+/* 3. Vista de Cuadrícula (Grid) */
+.img-grid {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Esto fuerza a que la imagen sea un cuadrado perfecto */
+    object-fit: cover;   /* Evita que la imagen se estire, la recorta al centro */
+    display: block;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
 
-        /* Color cuando la cuadrícula está activa */
-        #pills-grid-tab.active i {
-            color: black !important;
-        }
+.img-grid:hover {
+    filter: brightness(0.8); /* Efecto sutil al pasar el mouse */
+}
 
-        /* Color cuando la lista está activa */
-        #pills-list-tab.active i {
-            color: #0d6efd !important;
-        }
+/* Ajuste del contenedor para que las fotos no se vean gigantes en monitores grandes */
+#pills-grid .container {
+    max-width: 935px;
+}
 
-        /* Ajuste de imágenes */
-        .object-fit-cover {
-            object-fit: cover;
-        }
+/* 4. Vista de Lista (Posts) */
+.post-container {
+    border-radius: 3px;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
-  
+.post-header {
+    height: 60px;
+}
+
+.user-avatar {
+    font-size: 1.8rem;
+}
+
+.post-caption {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* 5. Botones Personalizados */
+.btn-success {
+    background-color: #198754;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+}
+
+/* 6. Ajustes de iconos en los posts */
+.post-actions i {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.post-actions i:hover {
+    opacity: 0.6;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .navbar-brand span {
+        display: none; /* Esconde el texto "Instagram" en pantallas muy pequeñas si es necesario */
+    }
+    
+    .img-grid {
+        height: auto; /* Permite que el aspect-ratio domine */
+    }
+}
+
+.modal { z-index: 9999 !important; }
+.modal-backdrop { z-index: 9998 !important; }
