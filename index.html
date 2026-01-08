@@ -18,8 +18,10 @@
                 <i class="fa-brands fa-instagram me-2 fs-3"></i>
                 <span class="fw-bold fs-4">Instagram</span>
             </a>
-            <div class="d-flex align-items-center">
-                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#createPostModal">Nuevo Post</button>
+            <!-- Desktop controls (visible on md and up) -->
+            <div class="d-none d-md-flex align-items-center">
+                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#createPostModal">Nuevo
+                    Post</button>
                 <div class="dropdown">
                     <button class="btn btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-gear"></i>
@@ -28,7 +30,32 @@
                         <li><a class="dropdown-item" href="#">Perfil</a></li>
                         <li><a class="dropdown-item" href="#">Accesibilidad</a></li>
                         <li><a class="dropdown-item" href="#">Privacidad</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="#">Salir</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile controls (visible only on small screens) -->
+            <div class="d-flex d-md-none align-items-center">
+                <div class="dropdown">
+                    <button class="btn btn-light border" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createPostModal">Nuevo
+                                Post</button></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Accesibilidad</a></li>
+                        <li><a class="dropdown-item" href="#">Privacidad</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item text-danger" href="#">Salir</a></li>
                     </ul>
                 </div>
@@ -47,11 +74,14 @@
                     <form id="createPostForm">
                         <div class="mb-3">
                             <label class="form-label fw-bold">Descripción:</label>
-                            <textarea class="form-control" rows="3" placeholder="Añade la descripción de tu post aquí..."></textarea>
+                            <textarea class="form-control" rows="3"
+                                placeholder="Añade la descripción de tu post aquí..."></textarea>
                         </div>
                         <div class="d-flex gap-2">
-                            <button type="button" class="btn btn-light border btn-sm"><i class="fa-solid fa-camera"></i></button>
-                            <button type="button" class="btn btn-light border btn-sm"><i class="fa-solid fa-location-dot"></i></button>
+                            <button type="button" class="btn btn-light border btn-sm"><i
+                                    class="fa-solid fa-camera"></i></button>
+                            <button type="button" class="btn btn-light border btn-sm"><i
+                                    class="fa-solid fa-location-dot"></i></button>
                         </div>
                     </form>
                 </div>
@@ -65,25 +95,36 @@
 
     <div class="container-fluid bg-white border-bottom shadow-sm">
         <ul class="nav nav-pills justify-content-center py-2" id="pills-tab" role="tablist">
-            <li class="nav-item"><button class="nav-link active" id="pills-grid-tab" data-bs-toggle="pill" data-bs-target="#pills-grid" type="button"><i class="fa-solid fa-th fs-5"></i></button></li>
-            <li class="nav-item"><button class="nav-link" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button"><i class="fa-solid fa-square fs-5"></i></button></li>
+            <li class="nav-item"><button class="nav-link active" id="pills-grid-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-grid" type="button"><i class="fa-solid fa-th fs-5"></i></button></li>
+            <li class="nav-item"><button class="nav-link" id="pills-list-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-list" type="button"><i class="fa-solid fa-square fs-5"></i></button></li>
         </ul>
     </div>
 
     <div class="tab-content mt-3" id="pills-tabContent">
-        
+
         <div class="tab-pane fade show active" id="pills-grid" role="tabpanel">
             <div class="container p-0" style="max-width: 935px;">
                 <div class="row g-1">
-                    <div class="col-4"><img src="https://picsum.photos/id/10/600/600" class="img-fluid img-grid" alt="Post"></div>
-                    <div class="col-4"><img src="https://picsum.photos/id/20/600/600" class="img-fluid img-grid" alt="Post"></div>
-                    <div class="col-4"><img src="https://picsum.photos/id/30/600/600" class="img-fluid img-grid" alt="Post"></div>
-                    <div class="col-4"><img src="https://picsum.photos/id/40/600/600" class="img-fluid img-grid" alt="Post"></div>
-                    <div class="col-4"><img src="https://picsum.photos/id/50/600/600" class="img-fluid img-grid" alt="Post"></div>
-                    <div class="col-4"><img src="https://picsum.photos/id/60/600/600" class="img-fluid img-grid" alt="Post"></div>
-                    <div class="col-4"><img src="https://picsum.photos/id/70/600/600" class="img-fluid img-grid" alt="Post"></div>
-                    <div class="col-4"><img src="https://picsum.photos/id/80/600/600" class="img-fluid img-grid" alt="Post"></div>
-                    <div class="col-4"><img src="https://picsum.photos/id/90/600/600" class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-12 col-md-4"><img src="https://picsum.photos/id/10/600/600"
+                            class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-12 col-md-4"><img src="https://picsum.photos/id/20/600/600"
+                            class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-12 col-md-4"><img src="https://picsum.photos/id/30/600/600"
+                            class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-12 col-md-4"><img src="https://picsum.photos/id/40/600/600"
+                            class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-12 col-md-4"><img src="https://picsum.photos/id/50/600/600"
+                            class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-12 col-md-4"><img src="https://picsum.photos/id/60/600/600"
+                            class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-12 col-md-4"><img src="https://picsum.photos/id/70/600/600"
+                            class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-12 col-md-4"><img src="https://picsum.photos/id/80/600/600"
+                            class="img-fluid img-grid" alt="Post"></div>
+                    <div class="col-12 col-md-4"><img src="https://picsum.photos/id/90/600/600"
+                            class="img-fluid img-grid" alt="Post"></div>
                 </div>
             </div>
         </div>
@@ -92,19 +133,23 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6">
-                        
+
                         <div class="post-container bg-white border mb-5">
                             <header class="p-3 d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
                                     <div class="me-2 fs-3 text-danger"><i class="fab fa-html5"></i></div>
-                                    <div class="lh-1"><div class="fw-bold">HTML5</div><small class="text-secondary">Frank Padilla</small></div>
+                                    <div class="lh-1">
+                                        <div class="fw-bold">HTML5</div><small class="text-secondary">Frank
+                                            Padilla</small>
+                                    </div>
                                 </div>
                                 <i class="fas fa-ellipsis-v text-secondary"></i>
                             </header>
                             <img src="https://picsum.photos/id/237/800/600" class="w-100" alt="Perro">
                             <div class="p-3">
                                 <div class="d-flex justify-content-between mb-2 fs-4">
-                                    <div><i class="far fa-heart me-2"></i><i class="far fa-comment me-2"></i><i class="far fa-paper-plane"></i></div>
+                                    <div><i class="far fa-heart me-2"></i><i class="far fa-comment me-2"></i><i
+                                            class="far fa-paper-plane"></i></div>
                                     <i class="far fa-bookmark"></i>
                                 </div>
                                 <div class="fw-bold mb-1">204 Me gusta</div>
@@ -116,14 +161,18 @@
                             <header class="p-3 d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
                                     <div class="me-2 fs-3 text-danger"><i class="fab fa-html5"></i></div>
-                                    <div class="lh-1"><div class="fw-bold">HTML5</div><small class="text-secondary">Frank Padilla</small></div>
+                                    <div class="lh-1">
+                                        <div class="fw-bold">HTML5</div><small class="text-secondary">Frank
+                                            Padilla</small>
+                                    </div>
                                 </div>
                                 <i class="fas fa-ellipsis-v text-secondary"></i>
                             </header>
                             <img src="https://picsum.photos/id/10/800/600" class="w-100" alt="Paisaje">
                             <div class="p-3">
                                 <div class="d-flex justify-content-between mb-2 fs-4">
-                                    <div><i class="far fa-heart me-2"></i><i class="far fa-comment me-2"></i><i class="far fa-paper-plane"></i></div>
+                                    <div><i class="far fa-heart me-2"></i><i class="far fa-comment me-2"></i><i
+                                            class="far fa-paper-plane"></i></div>
                                     <i class="far fa-bookmark"></i>
                                 </div>
                                 <div class="fw-bold mb-1">512 Me gusta</div>
@@ -135,14 +184,18 @@
                             <header class="p-3 d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
                                     <div class="me-2 fs-3 text-danger"><i class="fab fa-html5"></i></div>
-                                    <div class="lh-1"><div class="fw-bold">HTML5</div><small class="text-secondary">Frank Padilla</small></div>
+                                    <div class="lh-1">
+                                        <div class="fw-bold">HTML5</div><small class="text-secondary">Frank
+                                            Padilla</small>
+                                    </div>
                                 </div>
                                 <i class="fas fa-ellipsis-v text-secondary"></i>
                             </header>
                             <img src="https://picsum.photos/id/43/800/600" class="w-100" alt="Ciudad">
                             <div class="p-3">
                                 <div class="d-flex justify-content-between mb-2 fs-4">
-                                    <div><i class="far fa-heart me-2"></i><i class="far fa-comment me-2"></i><i class="far fa-paper-plane"></i></div>
+                                    <div><i class="far fa-heart me-2"></i><i class="far fa-comment me-2"></i><i
+                                            class="far fa-paper-plane"></i></div>
                                     <i class="far fa-bookmark"></i>
                                 </div>
                                 <div class="fw-bold mb-1">389 Me gusta</div>
@@ -158,4 +211,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

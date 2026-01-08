@@ -92,6 +92,23 @@ body {
     .img-grid {
         height: auto; /* Permite que el aspect-ratio domine */
     }
+
+    /* Mostrar las imágenes del grid en una sola columna y separarlas para mobile */
+    .img-grid {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Ajustes para que los posts aprovechen el ancho en mobile */
+    .post-container {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    /* Más espacio en el toggle del menú móvil para que sea fácil de tocar */
+    .navbar .btn {
+        padding: 6px 8px;
+    }
 }
 
 .modal { z-index: 9999 !important; }
